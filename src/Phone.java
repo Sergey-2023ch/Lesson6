@@ -1,19 +1,14 @@
 public class Phone {
-   private String number;
+    private String number;
     private String model;
     private double weight;
-    private String name;
 
     void getInfo() {
-        System.out.printf("number : %s , model: %s , weight: %f\n", number, model, weight);
+        System.out.printf("number : %s , model: %s , weight: %f\n", this.getNumber(),this.getModel(),this.getWeight());
     }
 
-    void receiveCall() {
+    void receiveCall(String name) {
         System.out.printf("%s colling\n", name);
-    }
-
-    String getNumber() {
-        return number;
     }
 
     public Phone(String number, String model, double weight) {
@@ -25,10 +20,10 @@ public class Phone {
     public Phone(String number, String model) {
         this.number = number;
         this.model = model;
-        this.weight = 0.540;
     }
 
     public Phone() {
+        System.out.println("Phone is created");
     }
 
     public void setNumber(String number) {
@@ -43,8 +38,16 @@ public class Phone {
         this.weight = weight;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getNumber() {
+        return number;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getWeight() {
+        return weight;
     }
 }
 
