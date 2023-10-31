@@ -1,4 +1,4 @@
-public class XiaomiPhone extends Phone{
+public class XiaomiPhone extends Phone implements Callable,Informable{
     private String color;
 
     public XiaomiPhone(String number, String model, double weight,String color) {
@@ -7,5 +7,10 @@ public class XiaomiPhone extends Phone{
     }
     public void getInfo(){
         System.out.printf("number %s ,model Xiaomi %s, weight %f ,color %s \n",getNumber(),getModel(),getWeight(),color);
+    }
+
+    @Override
+    public void receiveCall() {
+        System.out.println("The XiaomiPhone is ringing");
     }
 }

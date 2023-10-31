@@ -1,4 +1,4 @@
-public class SamsungPhone extends Phone{
+public class SamsungPhone extends Phone implements Callable,Informable{
 
     public SamsungPhone(String number, String model, double weight) {
         super(number, model, weight);
@@ -11,4 +11,12 @@ public class SamsungPhone extends Phone{
     }
 
 
+    @Override
+    public void receiveCall() {
+        System.out.println("The SamsungPhone is ringing");
+    }
+   public void info(){
+       System.out.println("Informable SamsungPhone");
+
+    }
 }
