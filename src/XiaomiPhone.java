@@ -1,7 +1,7 @@
-public class XiaomiPhone extends Phone implements Callable,Informable{
-    private String color;
+public class XiaomiPhone <T>extends Phone implements Callable<T>,Informable{
+    private T color;
 
-    public XiaomiPhone(String number, String model, double weight,String color) {
+    public XiaomiPhone(T number,T model,T weight,T color) {
         super(number, model, weight);
         this.color=color;
     }
@@ -10,7 +10,15 @@ public class XiaomiPhone extends Phone implements Callable,Informable{
     }
 
     @Override
-    public void receiveCall() {
-        System.out.println("The XiaomiPhone is ringing");
+    public void receiveCall(String name) {
+        System.out.printf("%s is ringing\n",name);
+    }
+
+    public T getColor() {
+        return color;
+    }
+
+    public void setColor(T color) {
+        this.color = color;
     }
 }

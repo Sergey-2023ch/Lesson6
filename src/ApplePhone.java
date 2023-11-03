@@ -1,4 +1,4 @@
-public class ApplePhone extends Phone implements Callable,Informable{
+public class ApplePhone<T> extends Phone implements Callable,Informable{
 
     private final String icon;
 
@@ -11,7 +11,11 @@ public class ApplePhone extends Phone implements Callable,Informable{
     }
 
     @Override
-    public void receiveCall() {
-        System.out.println("The ApplePhone is ringing");
+    public void receiveCall(String name) {
+        System.out.printf("%s is calling\n",name);
+    }
+
+    public String getIcon() {
+        return icon;
     }
 }
